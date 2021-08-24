@@ -2090,6 +2090,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 126779821}
+    - target: {fileID: 5478641432386700544, guid: 8b79116aa3c9c9d49b21fc399bcfa21c, type: 3}
+      propertyPath: attackCooldownInSeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5478641432386700547, guid: 8b79116aa3c9c9d49b21fc399bcfa21c, type: 3}
       propertyPath: m_RootOrder
       value: 3

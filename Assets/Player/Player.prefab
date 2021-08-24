@@ -312,14 +312,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carbine
       objectReference: {fileID: 0}
+    - target: {fileID: 2379181253485474186, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: m_Name
+      value: MuzzleFlash
+      objectReference: {fileID: 0}
     - target: {fileID: 4743743697169122136, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: FPCamera
       value: 
       objectReference: {fileID: 3535767024274944326}
+    - target: {fileID: 4743743697169122136, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: hitImpact
+      value: 
+      objectReference: {fileID: 100010, guid: f97b47fbfbe74664f9682a458d26defd, type: 3}
+    - target: {fileID: 4743743697169122136, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 453264833031273858}
+    - target: {fileID: 4743743697169122136, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: shotCooldownInSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244034147442805564, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244034147442805564, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244034147442805564, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
 --- !u!4 &8738224387605222541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+  m_PrefabInstance: {fileID: 6425119721143604011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &453264833031273858 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6872719182469689001, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
   m_PrefabInstance: {fileID: 6425119721143604011}
   m_PrefabAsset: {fileID: 0}

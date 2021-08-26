@@ -16,6 +16,6 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     private void Die() {
-        Debug.Log("Player died!");
+        FindObjectOfType<DeathHandler>().HandleDeath();
     }
 }

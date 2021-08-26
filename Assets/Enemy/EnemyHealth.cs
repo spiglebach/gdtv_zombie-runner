@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void TakeDamage(int damageAmount) {
         currentHitpoints -= damageAmount;
+        BroadcastMessage("OnDamageTaken", SendMessageOptions.DontRequireReceiver);
         if (currentHitpoints <= 0) {
             Die();
         }

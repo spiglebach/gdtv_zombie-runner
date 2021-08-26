@@ -7,13 +7,18 @@ public class EnemyAI : MonoBehaviour {
     [SerializeField] private float attackCooldownInSeconds = 3f;
 
     private NavMeshAgent navMeshAgent;
+    private Animator animator;
 
     private bool isProvoked = false;
     private float distanceToTarget = Mathf.Infinity;
     private float remainingAttackCooldown;
+    
+    private static readonly int MoveTrigger = Animator.StringToHash("Move");
+    private static readonly int AttackBool = Animator.StringToHash("Attack");
 
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -26,6 +31,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void EngageTarget() {
+        animator.SetTrigger(MoveTrigger);
         if (distanceToTarget <= navMeshAgent.stoppingDistance) {
             Attack();
         } else {
@@ -34,8 +40,11 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Attack() {
-        if (remainingAttackCooldown > 0) return;
-        Debug.Log("You have been attacked!");
+        if (remainingAttackCooldown > 0) {
+            animator.SetBool(AttackBool, false);
+            return;
+        }
+        animator.SetBool(AttackBool, true);
         remainingAttackCooldown = attackCooldownInSeconds;
     }
 

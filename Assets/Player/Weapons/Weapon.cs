@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject hitImpact;
     [SerializeField] private float shotCooldownInSeconds = 1f;
+    [SerializeField] private Ammo ammoSlot;
     private float remainingShotCooldown;
 
     
@@ -19,7 +20,9 @@ public class Weapon : MonoBehaviour {
 
     private void Shoot() {
         if (remainingShotCooldown > 0) return;
+        if (ammoSlot.AmmoAmount <= 0) return;
         remainingShotCooldown = shotCooldownInSeconds;
+        ammoSlot.ReduceAmmo();
         PlayMuzzleFlash();
         HitTarget();
     }

@@ -19,6 +19,14 @@ public class Ammo : MonoBehaviour {
             }
         }
     }
+    
+    public void IncreaseAmmo(AmmoType ammoType, int ammoAmount) {
+        foreach (var ammoSlot in ammoSlots) {
+            if (ammoSlot.ammoType == ammoType) {
+                ammoSlot.ammoAmount += ammoAmount;
+            }
+        }
+    }
 
     [System.Serializable]
     private class AmmoSlot {

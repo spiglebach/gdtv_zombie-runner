@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour {
     [SerializeField] private int currentWeapon = 0;
+    private int previousWeapon;
 
     private void Awake() {
         SetActiveWeapon();
@@ -18,7 +19,7 @@ public class WeaponSwitcher : MonoBehaviour {
     }
 
     private void CycleWeapons() {
-        int previousWeapon = currentWeapon;
+        previousWeapon = currentWeapon;
         ProcessKeyInput();
         ProcessScrollInput();
         if (previousWeapon != currentWeapon) {
@@ -39,7 +40,7 @@ public class WeaponSwitcher : MonoBehaviour {
             if (currentWeapon >= transform.childCount) currentWeapon = 0;
         } else if (scroll < 0) {
             currentWeapon--;
-            if (currentWeapon < 0) currentWeapon = transform.childCount;
+            if (currentWeapon < 0) currentWeapon = transform.childCount - 1;
         }
     }
 }

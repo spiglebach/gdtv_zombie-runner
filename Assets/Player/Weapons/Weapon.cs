@@ -4,6 +4,7 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private Camera FPCamera;
     [SerializeField] private float range = 100f;
     [SerializeField] private int damage = 30;
+    [SerializeField] private AmmoType ammoType = AmmoType.RifleRound;
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject hitImpact;
     [SerializeField] private float shotCooldownInSeconds = 1f;
@@ -20,9 +21,9 @@ public class Weapon : MonoBehaviour {
 
     private void Shoot() {
         if (remainingShotCooldown > 0) return;
-        if (ammoSlot.AmmoAmount <= 0) return;
+        if (ammoSlot.GetAmmoAmount(ammoType) <= 0) return;
         remainingShotCooldown = shotCooldownInSeconds;
-        ammoSlot.ReduceAmmo();
+        ammoSlot.ReduceAmmo(ammoType);
         PlayMuzzleFlash();
         HitTarget();
     }

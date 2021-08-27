@@ -23,12 +23,20 @@ public class WeaponZoom : MonoBehaviour {
     private void Update() {
         if (Input.GetMouseButtonDown(1)) {
             isZoomed = !isZoomed;
-            playerCamera.fieldOfView = isZoomed ? zoomFOV : defaultFOV;
-
-            fpsController.mouseLook.XSensitivity =
-                isZoomed ? zoomedInSensitivityX : defaultSensitivityX;
-            fpsController.mouseLook.YSensitivity =
-                isZoomed ? zoomedInSensitivityY : defaultSensitivityY;
+            ApplyCurrentZoomEffects();
         }
+    }
+
+    private void ApplyCurrentZoomEffects() {
+        playerCamera.fieldOfView = isZoomed ? zoomFOV : defaultFOV;
+        fpsController.mouseLook.XSensitivity =
+            isZoomed ? zoomedInSensitivityX : defaultSensitivityX;
+        fpsController.mouseLook.YSensitivity =
+            isZoomed ? zoomedInSensitivityY : defaultSensitivityY;
+    }
+
+    public void OnDisable() {
+        isZoomed = false;
+        ApplyCurrentZoomEffects();
     }
 }

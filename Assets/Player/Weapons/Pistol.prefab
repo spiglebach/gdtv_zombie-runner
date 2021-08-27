@@ -350,6 +350,7 @@ MonoBehaviour:
   FPCamera: {fileID: 0}
   range: 100
   damage: 30
+  ammoType: 2
   muzzleFlash: {fileID: 3744784756230658214}
   hitImpact: {fileID: 100010, guid: f97b47fbfbe74664f9682a458d26defd, type: 3}
   shotCooldownInSeconds: 1

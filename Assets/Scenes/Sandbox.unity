@@ -2922,6 +2922,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666493126687835307, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoAmount
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7159992336983190661, guid: 65bea8e0c30af0b4e90e22c0d4e9903e, type: 3}
       propertyPath: gameOverCanvas
       value: 

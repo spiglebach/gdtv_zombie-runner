@@ -6,8 +6,8 @@ public class WeaponZoom : MonoBehaviour {
     [SerializeField] private float zoomedInSensitivityY = 1f;
     [SerializeField] private float zoomFOV = 20f;
     
-    private Camera playerCamera;
-    private RigidbodyFirstPersonController fpsController;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private RigidbodyFirstPersonController fpsController;
     
     private float defaultFOV;
     private bool isZoomed;
@@ -15,8 +15,6 @@ public class WeaponZoom : MonoBehaviour {
     private float defaultSensitivityY;
 
     private void Awake() {
-        playerCamera = GetComponentInChildren<Camera>();
-        fpsController = GetComponent<RigidbodyFirstPersonController>();
         defaultSensitivityX = fpsController.mouseLook.XSensitivity;
         defaultSensitivityY = fpsController.mouseLook.YSensitivity;
         defaultFOV = playerCamera.fieldOfView;

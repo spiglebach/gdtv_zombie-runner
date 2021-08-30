@@ -13,8 +13,10 @@ public class EnemyAI : MonoBehaviour {
     private bool isProvoked = false;
     private float distanceToTarget = Mathf.Infinity;
     private float remainingAttackCooldown;
+    private bool isDead;
     
     private static readonly int MoveTrigger = Animator.StringToHash("Move");
+    private static readonly int DieTrigger = Animator.StringToHash("Die");
     private static readonly int AttackBool = Animator.StringToHash("Attack");
 
     private void Awake() {
@@ -23,6 +25,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     void Update() {
+        if (isDead) return;
         remainingAttackCooldown -= Time.deltaTime;
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         isProvoked = isProvoked || distanceToTarget <= chaseRange;
@@ -43,6 +46,12 @@ public class EnemyAI : MonoBehaviour {
 
     public void OnDamageTaken() {
         isProvoked = true;
+    }
+
+    public void OnDeath() {
+        navMeshAgent.isStopped = true;
+        isDead = true;
+        animator.SetTrigger(DieTrigger);
     }
 
     private void Attack() {

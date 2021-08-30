@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7159992336983190661}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2c2f2ff46e02947a0a69c90351ed74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 25
+  - ammoType: 1
+    ammoAmount: 5
+  - ammoType: 2
+    ammoAmount: 60
 --- !u!114 &4386434123031328639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41efca63f25f99c418e2f5d151985cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: 2
 --- !u!1001 &944343016329740001
 PrefabInstance:
   m_ObjectHideFlags: 0

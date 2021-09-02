@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
@@ -11,7 +12,16 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private Ammo ammoSlot;
     private float remainingShotCooldown;
 
-    
+    private TMP_Text ammoDisplay;
+
+    private void Awake() {
+        ammoDisplay = GameObject.FindWithTag("AmmoDisplay").GetComponent<TMP_Text>();
+    }
+
+    private void OnEnable() {
+        DisplayAmmo();
+    }
+
     void Update() {
         remainingShotCooldown -= Time.deltaTime;
         if (Input.GetButton("Fire1")) {
@@ -24,6 +34,7 @@ public class Weapon : MonoBehaviour {
         if (ammoSlot.GetAmmoAmount(ammoType) <= 0) return;
         remainingShotCooldown = shotCooldownInSeconds;
         ammoSlot.ReduceAmmo(ammoType);
+        DisplayAmmo();
         PlayMuzzleFlash();
         HitTarget();
     }
@@ -46,5 +57,9 @@ public class Weapon : MonoBehaviour {
     private void PlayMuzzleFlash() {
         if (!muzzleFlash) return;
         muzzleFlash.Play();
+    }
+
+    private void DisplayAmmo() {
+        ammoDisplay.text = ammoSlot.GetAmmoAmount(ammoType).ToString();
     }
 }

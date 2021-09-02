@@ -1,14 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour {
-    [SerializeField] private Transform target;
     [SerializeField] private float chaseRange = 5f;
     [SerializeField] private float attackCooldownInSeconds = 3f;
     [SerializeField] private float turnSpeed = 5f;
 
     private NavMeshAgent navMeshAgent;
     private Animator animator;
+    private Transform target;
 
     private bool isProvoked = false;
     private float distanceToTarget = Mathf.Infinity;
@@ -22,6 +23,10 @@ public class EnemyAI : MonoBehaviour {
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+    }
+
+    private void Start() {
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     void Update() {
